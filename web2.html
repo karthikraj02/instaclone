@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive BOGO Boxes</title>
+  <style>
+    body {
+      background-color: #000;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      width: 444px;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .title {
+      text-align: center;
+      color: #d9534f;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .box {
+      border: 2px solid #ffffff;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      background: white;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      padding-bottom: 5px;
+    }
+
+    .box.popular {
+      border-color: #d9534f;
+      position: relative;
+    }
+
+    .popular-tag {
+      position: absolute;
+      
+      right: -1px;
+      background-color: #d9534f;
+      color: white;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 8px;
+      font-weight: bold;
+    }
+
+    .box-header {
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      background: #fff;
+      cursor: pointer;
+      gap: 10px;
+    }
+
+    .box-header input[type="radio"] {
+      transform: scale(1.2);
+      margin-right: 10px;
+    }
+
+    .discount {
+      color: #d9534f;
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    .box-content {
+      display: none;
+      padding: 15px;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    .options-group {
+      margin-top: 10px;
+    }
+
+    .label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .options {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    .color-button {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      cursor: pointer;
+    }
+
+    .size-button {
+      padding: 6px 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #f5f5f5;
+      cursor: pointer;
+    }
+
+    .footer {
+      text-align: right;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .add-to-cart {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #f53b5c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form>
+      <div class="title">YAY! It's BOGO</div>
+
+      <!-- 1 Unit -->
+      <div class="box" id="box1">
+        <div class="box-header">
+          <label>
+            <input type="radio" name="unit" value="10.00">
+            1 Unit <span class="price">$10.00 USD</span>
+          </label>
+          <div class="discount">10% OFF</div>
+        </div>
+        <div class="box-content">
+          <div class="options-group">
+            <div class="label">Color:</div>
+            <div class="options">
+              <div class="color-button" style="background-color: red;"></div>
+              <div class="color-button" style="background-color: blue;"></div>
+              <div class="color-button" style="background-color: black;"></div>
+            </div>
+          </div>
+          <div class="options-group">
+            <div class="label">Size:</div>
+            <div class="options">
+              <button class="size-button" type="button">S</button>
+              <button class="size-button" type="button">M</button>
+              <button class="size-button" type="button">L</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 Unit -->
+      <div class="box popular" id="box2">
+        <div class="popular-tag">MOST POPULAR</div>
+        <div class="box-header">
+          <label>
+            <input type="radio" name="unit" value="18.00">
+            2 Unit <span class="price">$18.00 USD</span>
+          </label>
+          <div class="discount">20% OFF</div>
+        </div>
+        <div class="box-content">
+          <div class="options-group">
+            <div class="label">Color:</div>
+            <div class="options">
+              <div class="color-button" style="background-color: black;"></div>
+              <div class="color-button" style="background-color: grey;"></div>
+            </div>
+          </div>
+          <div class="options-group">
+            <div class="label">Size:</div>
+            <div class="options">
+              <button class="size-button" type="button">M</button>
+              <button class="size-button" type="button">L</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Unit -->
+      <div class="box" id="box3">
+        <div class="box-header">
+          <label>
+            <input type="radio" name="unit" value="24.00">
+            3 Unit <span class="price">$24.00 USD</span>
+          </label>
+          <div class="discount">30% OFF</div>
+        </div>
+        <div class="box-content">
+          <div class="options-group">
+            <div class="label">Color:</div>
+            <div class="options">
+              <div class="color-button" style="background-color: pink;"></div>
+              <div class="color-button" style="background-color: violet;"></div>
+            </div>
+          </div>
+          <div class="options-group">
+            <div class="label">Size:</div>
+            <div class="options">
+              <button class="size-button" type="button">L</button>
+              <button class="size-button" type="button">XL</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">Total: $0.00 USD</div>
+      <button class="add-to-cart" type="submit">+ Add to Cart</button>
+    </form>
+  </div>
+
+  <script>
+    const boxes = document.querySelectorAll('.box');
+    const radios = document.querySelectorAll('input[type="radio"][name="unit"]');
+    const totalDisplay = document.querySelector('.footer');
+
+    radios.forEach((radio) => {
+      radio.addEventListener('change', () => {
+        const price = parseFloat(radio.value).toFixed(2);
+        totalDisplay.textContent = `Total: $${price} USD`;
+
+        boxes.forEach((box) => {
+          const content = box.querySelector('.box-content');
+          const input = box.querySelector('input[type="radio"]');
+          content.style.display = (input === radio) ? 'block' : 'none';
+        });
+      });
+    });
+
+    boxes.forEach((box) => {
+      const header = box.querySelector('.box-header');
+      const radio = box.querySelector('input[type="radio"]');
+      header.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'INPUT' && radio) {
+          radio.checked = true;
+          radio.dispatchEvent(new Event('change'));
+        }
+      });
+    });
+  </script>
+</body>
+</html>
